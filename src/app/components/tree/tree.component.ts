@@ -4,24 +4,14 @@ import { DataService } from 'src/app/services/data.service';
 @Component({
   selector: 'app-tree',
   templateUrl: './tree.component.html',
-  styleUrls: ['./tree.component.css']
+  styleUrls: ['./tree.component.css'],
 })
 export class TreeComponent implements OnInit {
-  tree: any
+  tree: any;
 
-  constructor(private dataService:DataService) {
-    this.tree = dataService.getTree()
-  }
+  constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
+    this.tree = this.dataService.getTree();
   }
-
-  isFolder(node:any): boolean {
-    return Array.isArray(node.items)
-  }
-
-  toggleFolder(node:any): void {
-    node.closed = !node.closed;
-  }
-
 }

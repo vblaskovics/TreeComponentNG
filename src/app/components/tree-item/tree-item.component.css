@@ -1,0 +1,15 @@
+.tree-item {
+  margin-left: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.tree-item p {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tree-item p:hover {
+  background-color: aqua;
+}
