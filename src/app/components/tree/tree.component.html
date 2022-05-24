@@ -1,0 +1,22 @@
+<div class="tree-item" [ngClass]="{'closed': tree.closed}">
+  <p (click)="toggleFolder(tree)">
+    <span>📂 {{ tree.label }}</span>
+    <a>❎</a>
+  </p>
+
+  <div *ngFor="let item of tree.items" class="tree-item" [ngClass]="{'closed': item.closed}">
+    <p (click)="toggleFolder(item)">
+      <span>{{ isFolder(item) ? '📂' : '📄' }} {{ item.label }}</span>
+      <a>❎</a>
+    </p>
+
+    <div *ngFor="let subItem of item.items" class="tree-item" [ngClass]="{'closed': item.closed}">
+      <p (click)="toggleFolder(subItem)">
+        <span>{{ isFolder(subItem) ? '📂' : '📄' }} {{ subItem.label }}</span>
+        <a>❎</a>
+      </p>
+    </div>
+
+  </div>
+
+</div>
