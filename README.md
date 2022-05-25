@@ -1,27 +1,48 @@
-# TreeComponentNG
+# Feladatok
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.6.
+(Tetszőleges sorrendben megoldhatóak)
 
-## Development server
+## 1. feladat
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Legyenek törölhetőek az elemek.
 
-## Code scaffolding
+Egy lehetséges megoldás, ha EventEmitter-t és Output dekorátor függvényt használunk:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+https://angular.io/guide/event-binding#custom-events-with-eventemitter
 
-## Build
+## 2. feladat
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Lehessen átnevezni elemet:
+- Ceruza ikonra kattintva a sor végén a label helyett egy input mező jelenjen meg
+- Ha kívül kattintunk az input mezőn, akkor elmentjük az értékét, és visszaváltunk szöveges label-re
 
-## Running unit tests
+## 3. feladat
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Ha rákattintunk egy fájlra, akkor a tree mellett jobb oldalon jelenjen meg egy Detail nézet, ami az alábbi adatokat jelenítse meg szövegesen:
+- Fájl neve*
+- Fájl létrehozási dátuma*
+- Fájl utolsó módosításának dátuma*
+- Fájl mérete*
+- Tulajdonos neve
+- Tulajdonos email címe
 
-## Running end-to-end tests
+A DataService-ben a kiinduló adatot töltsd fel dummy adatokkal, úgy, hogy minden fájlnak legyen minden tulajdonsága!
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 3.1 feladat
 
-## Further help
+- A Detail nézetben legyen egy Edit gomb.
+- Ha az Edit gombra kattintunk, akkor a szöveges kiírás helyett egy Űrlap jelenjen meg
+    - Elegendő Template Driven Form-ot használni, amit tanultatok, de ha valaki akarja, megnézheti a Reactive Formokat is
+- Az űrlapon keresztül lehessen szerkeszteni a fájl tulajdonságait
+- A csillaggal jelölt mezők kitöltése kötelező legyen
+- Próbálj minél pontosabban validálni:
+    - https://angular.io/guide/form-validation
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## 3.2 feladat
+
+Ha a Tree-ben nevezünk át egy fájlt, miközben a fájl tulajdonságai látszanak a Detail nézetben, akkor frissüljön a fájl neve a Detail nézetben is
+
+## 3.3 feladat
+
+Ha a Detailben nevezünk át egy fájlt, akkor frissüljön a fájl neve a Tree nézetben is.
+
