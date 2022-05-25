@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
+import { TreeNode } from '../interfaces/tree-node';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
-  tree: any;
+  tree: TreeNode;
 
-  constructor() {
+  constructor() {    
     this.tree = {
       label: 'Mappa1',
       items: [

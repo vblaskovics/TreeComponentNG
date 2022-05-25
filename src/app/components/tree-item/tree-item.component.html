@@ -1,9 +1,13 @@
 <div class="tree-item">
   <p (click)="toggleFolder()">
-    <span>{{ isFolder ? '📂' : '📄' }} {{ nodeData.label }}</span>
-    <a>❎</a>
+    <span>{{ isFolder ? "📂" : "📄" }} {{ nodeData?.label }}</span>
+    <a (click)="clickDelete($event)">❎</a>
   </p>
   <ng-container *ngIf="!closed">
-    <app-tree-item *ngFor="let item of nodeData.items" [nodeData]="item"></app-tree-item>
+    <app-tree-item
+      *ngFor="let item of nodeData?.items"
+      [nodeData]="item"
+      (deleteMe)="deleteItem($event)"
+    ></app-tree-item>
   </ng-container>
 </div>
