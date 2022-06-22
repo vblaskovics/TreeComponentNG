@@ -102,5 +102,7 @@
       }
     }
   },
-  "defaultProject": "TreeComponentNG"
+  "cli": {
+    "analytics": false
+  }
 }
